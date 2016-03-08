@@ -22,7 +22,7 @@
     is_ceph_infernalis
 
 - name: restart ceph mons on ubuntu
-  command: restart ceph-mon-all
+  command: initctl restart ceph-mon id={{ monitor_name }}
   when:
     socket.rc == 0 and
     ansible_distribution == 'Ubuntu' and
